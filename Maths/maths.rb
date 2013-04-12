@@ -7,10 +7,12 @@ load "Coordinates.rb"
 # but you should remove this comment if the "SystemOfEquations.rb" is missing or
 # removed
 load "Exponent.rb"
+load "Factorial.rb"
 load "Fractions.rb"
 load "Googol.rb"
 load "Grade.rb"
 load "Inequality.rb"
+load "Proportion.rb"
 load "Rectangle.rb"
 load "RectangularPrism.rb"
 load "RightTriangle.rb"

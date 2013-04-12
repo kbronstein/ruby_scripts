@@ -1,5 +1,5 @@
 class SystemOfInequalities
-	def self.calculate(slope_one,y_one,symbol_one,slope_two,y_two,symbol_two,number_of_points = 2)
+	def self.calculate(slope_one,y_one,symbol_one,slope_two,y_two,symbol_two,number_of_points)
 		@slope_one = slope_one
 		@slope_two = slope_two
 		@y_one = y_one
@@ -20,9 +20,9 @@ class SystemOfInequalities
 		end
 
 		puts "Line 1:"
-		Inequality.plot(@slope_one,@y_one,@number_of_points_one,@symbol_one)
+		Inequality.plot(@slope_one,@y_one,@number_of_points_one,@symbol_one,"soi")
 		puts "Line 2:"
-		Inequality.plot(@slope_two,@y_two,@number_of_points_two,@symbol_two)
+		Inequality.plot(@slope_two,@y_two,@number_of_points_two,@symbol_two,"soi")
 
 		if @symbol_one.include?(">") && @slope_one_pos_neg == "pos" && @symbol_two.include?(">") && @slope_two_pos_neg == "pos"
 			puts "Shading: top left"

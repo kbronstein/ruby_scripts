@@ -1,5 +1,5 @@
 class Inequality
-	def self.plot(slope,y,number_of_points = 2,symbol)
+	def self.plot(slope,y,number_of_points,symbol,soi = "")
 		@slope = slope
 		@y_one = y
 		@y_two = y
@@ -26,10 +26,12 @@ class Inequality
 		else
 			puts "Line: dotted"
 		end
-		if @symbol.include?(">")
-			puts "Shade: above"
-		elsif @symbol.include?("<")
-			puts "Shade: below"
+		if @soi != "soi"
+			if @symbol.include?(">")
+				puts "Shade: above"
+			elsif @symbol.include?("<")
+				puts "Shade: below"
+			end
 		end
 	end
 
