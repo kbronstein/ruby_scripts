@@ -12,13 +12,6 @@ class Exponent
 			puts "1"
 			puts "-" * (@y.to_s.split("").count)
 			puts "#{@y}"
-			# @power = power * -1
-			# @x = x
-			# @y = x
-			# while @power > 1
-			# 	@power -= 1
-			# 	@y /= @x
-			# end
 		elsif @power == 0
 			@y = 1
 		else	
@@ -28,6 +21,17 @@ class Exponent
 			end
 			@y
 		end
+	end
+
+	def self.self(x)
+		@x = x
+		@y = x
+		@power = x
+		while @power > 1
+			@power -= 1
+			@y *= @x
+		end
+		@y
 	end
 
 	def self.calculates(x,power = 2)

@@ -24,15 +24,22 @@ class SystemOfEquations
 				@y = @integer_one + @x
 				puts "#{@x},#{@y}"
 			else
-				@divider = @y_coef_one / @y_coef_two
-				@y_coef_one /= @divider
-				@integer_one /= @divider
-				@integer_two /= @divider
+				if @y_coef_one > @y_coef_two
+					@divider = @y_coef_one / @y_coef_two
+				elsif @y_coef_one > @y_coef_two
+					@divider = @y_coef_two / @y_coef_one
+				end
+				@x_coef_one *= @divider
+				@x_coef_two *= @divider
+				@y_coef_one *= @divider
+				@y_coef_two *= @divider
+				@integer_one *= @divider
+				@integer_two *= @divider
 				@y_coef = @y_coef_one + @y_coef_two
 				@integer = @integer_one + @integer_two
 				@y = @integer / @y_coef
 
-				@x = @integer_one + @x
+				@x = @integer_one + @y
 				puts "#{@x},#{@y}"
 			end
 		elsif @operator_one == "+" && @operator_two == "-"
@@ -51,15 +58,22 @@ class SystemOfEquations
 				@y = @integer_one + @x
 				puts "#{@x},#{@y}"
 			else
-				@divider = @y_coef_one / @y_coef_two
-				@y_coef_one /= @divider
-				@integer_one /= @divider
-				@integer_two /= @divider
+				if @y_coef_one > @y_coef_two
+					@divider = @y_coef_one / @y_coef_two
+				elsif @y_coef_one > @y_coef_two
+					@divider = @y_coef_two / @y_coef_one
+				end
+				@x_coef_one *= @divider
+				@x_coef_two *= @divider
+				@y_coef_one *= @divider
+				@y_coef_two *= @divider
+				@integer_one *= @divider
+				@integer_two *= @divider
 				@y_coef = @y_coef_one + @y_coef_two
 				@integer = @integer_one + @integer_two
 				@y = @integer / @y_coef
 
-				@x = @integer_one + @x
+				@x = @integer_one + @y
 				puts "#{@x},#{@y}"
 			end
 		else
@@ -78,15 +92,22 @@ class SystemOfEquations
 				@y = @integer_one - @x
 				puts "#{@x},#{@y}"
 			else
-				@divider = @y_coef_one / @y_coef_two
-				@y_coef_one /= @divider
-				@integer_one /= @divider
-				@integer_two /= @divider
+				if @y_coef_one > @y_coef_two
+					@divider = @y_coef_one / @y_coef_two
+				elsif @y_coef_one > @y_coef_two
+					@divider = @y_coef_two / @y_coef_one
+				end
+				@x_coef_one *= @divider
+				@x_coef_two *= @divider
+				@y_coef_one *= @divider
+				@y_coef_two *= @divider
+				@integer_one *= @divider
+				@integer_two *= @divider
 				@y_coef = @y_coef_one - @y_coef_two
 				@integer = @integer_one - @integer_two
 				@y = @integer / @y_coef
 
-				@x = @integer_one - @x
+				@x = @integer_one - @y
 				puts "#{@x},#{@y}"
 			end
 		end		

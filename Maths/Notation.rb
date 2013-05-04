@@ -16,11 +16,7 @@ class Notation
 	def self.sci_out(decimal,power)
 		@decimal = decimal
 		@power = power
-		@number_ary = @decimal.to_s.split("")
-		@zero_add = @power - (@number_ary.count - 2)
-		@number_ary += (["0"] * @zero_add)
-		@number_ary -= ["."]
-		@number = @number_ary.join("").to_i
+		@decimal * Exponent.calculate(10,@power)
 	end
 
 	def self.ex_in(number)
@@ -32,21 +28,16 @@ class Notation
 		puts "#{@number_ary.join("")} * 10^#{@power}"
 	end
 
-	# def self.ex_out(decimal,power,integer_digits = 2)
-	# 	@decimal = decimal
-	# 	@power = power
-	# 	@subtractor = integer_digits
-	# 	@number_ary = @decimal.to_s.split("")
-	# 	@zero_add = @power - (@number_ary.count - @subtractor)
-	# 	@number_ary += (["0"] * @zero_add)
-	# 	@number_ary -= ["."]
-	# 	@number = @number_ary.join("").to_i
-	# end
+	def self.ex_out(decimal,power)
+		@decimal = decimal
+		@power = power
+		@decimal * Exponent.calculate(10,@power)
+	end
 
 	def self.help
 		puts "sci_in(number)"
 		puts "sci_out(decimal,power)"
 		puts "ex_in(number)"
-		puts "coming soon: ex_out(decimal,power, integer_digits = 2)"
+		puts "ex_out(decimal,power)"
 	end
 end

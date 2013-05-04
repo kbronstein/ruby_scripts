@@ -1,9 +1,7 @@
-@random_number = (1 + rand(100000000))
-
 class Codex
-	def self.encrypt(user_message_encrypt, shift = @random_number)
+	def self.encrypt(user_message_encrypt)
 		@user_message_encrypt = user_message_encrypt
-		@shift = shift
+		@shift = (1 + rand(100000000))
 		@split_message_encrypt = @user_message_encrypt.split("")
 		@encrypted_message = []
 		@split_message_encrypt.each do |letter|
@@ -14,9 +12,7 @@ class Codex
 			end
 		end
 		puts "Message:#{@encrypted_message.join("")}"
-		if @shift == @random_number
-			puts "Passcode:#{@shift}"
-		end
+		puts "Passcode:#{@shift}"
 	end
 
 	def self.decrypt(user_message_decrypt,shift)
@@ -32,5 +28,10 @@ class Codex
 			end
 		end
 		@decrypted_message.join
+	end
+
+	def self.help
+		puts "self.encrypt(user_message_encrypt)"
+		puts "self.decrypt(user_message_decrypt,shift)"
 	end
 end

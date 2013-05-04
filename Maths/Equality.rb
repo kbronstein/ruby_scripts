@@ -52,7 +52,7 @@ class Equality
 		@y_int = y_int
 		@x = next_x
 		@y = next_y
-		@slope = ((@y - @y_int) / (@x - 0))
+		@slope = ((@y - @y_int) / @x)
 		if @y_int.to_s.include? "-"
 			@pos_neg_y_int = "neg"
 		else
@@ -69,7 +69,15 @@ class Equality
 		if @pos_neg_y_int == "pos"
 			@y_int = "+ #{@y_int}"
 		end
-		if @y_int == "+ 0"
+		if @slope == 0
+			@y_int_ary = @y_int.split("")
+			if @y_int.include?("+")
+				@y_int_ary -= ["+"]
+				@y_int_ary -= ["-"]
+				@y_int_ary -= [" "]
+			end
+			puts "y = #{@y_int_ary.join("")}"
+		elsif @y_int == "+ 0"
 			puts "y = #{@slope}x"
 		else
 			puts "y = #{@slope}x #{@y_int}"

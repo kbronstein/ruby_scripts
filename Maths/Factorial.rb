@@ -1,6 +1,6 @@
 class Factorial
 	def self.calculate(number)
-		@number = number
+		@number = number.round
 		@answer = @number
 		while @number > 1
 			@number -= 1
@@ -20,20 +20,32 @@ class Factorial
 		@answer
 	end
 
-	def self.calculater(number)
-		@number = number
+	def self.add(number)
+		@number = number.round
 		@answer = @number
-		@extra = 0
 		while @number > 1
-			@extra += 1
 			@number -= 1
-			@answer *= @number
-			if @extra >= 9997
-				puts "#{@answer}"
-				puts ""
-				puts ""
-				puts ""
-			end
+			@answer += @number
+		end
+		@answer
+	end
+
+	def self.subtract(number)
+		@number = number.round
+		@answer = @number
+		while @number > 1
+			@number -= 1
+			@answer -= @number
+		end
+		@answer
+	end
+
+	def self.divide(number)
+		@number = number.round
+		@answer = @number
+		while @number > 1
+			@number -= 1
+			@answer /= @number
 		end
 		@answer
 	end
@@ -41,5 +53,8 @@ class Factorial
 	def self.help
 		puts "calculate(number)"
 		puts "calculates(number)"
+		puts "add(number)"
+		puts "subtract(number)"
+		puts "divide(number)"
 	end
 end
